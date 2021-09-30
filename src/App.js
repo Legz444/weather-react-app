@@ -1,26 +1,11 @@
-import React, { useState } from 'react';
 
-const api = {
-  key: "670cb036800724c6a8fa3cec23b99a2b",
-  base: "https://api.openweathermap.org/data/2.5/"
-}
+import React from 'react';
+import Daily from './components/Daily';
+
 
 function App() {
 
-  const [query, setQuery] = useState('');
-  const [weather, setWeather] = useState({});
-
-  const search = e => {
-    if(e.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=imperial&APPID=${api.key}`)
-        .then(res => res.json())
-        .then(result => {
-          setWeather(result);
-          setQuery('');
-          console.log(result);
-    });
-  }
-  }
+ 
   return (
     <div className="app">
       <h1>The Very Beginning of our Weather App!</h1>
